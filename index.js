@@ -34,7 +34,11 @@ const medicosAPI = require("./routes/medicoRoute");
 //uso de la API para los medicos
 app.use("/medicos", medicosAPI);
 
-app.set("PORT", process.env.PORT || 3000);
-app.listen(app.get("PORT"), () => {
-  console.log(`Servidor en: ${app.get("PORT")}`);
-});
+// para base de datos local
+const server = app.listen(8000, () => console.log("conectado"));
+
+// para cuando ya este la base en mongo cloud
+// app.set("PORT", process.env.PORT || 3000);
+// app.listen(app.get("PORT"), () => {
+//   console.log(`Servidor en: ${app.get("PORT")}`);
+// });
