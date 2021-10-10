@@ -9,8 +9,8 @@ mongoose.Promise = global.Promise;
 
 mongoose
   .connect(db.url, {
-    urlNewUrlParser: true,
-    useUnifiedTipology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(
     () => console.log("db conectada"),
@@ -18,26 +18,31 @@ mongoose
   );
 
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, ContentType, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, ContentType, Accept"
+//   );
+//   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+//   res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
+//   next();
+// });
 
 const medicosAPI = require("./routes/medicoRoute");
+const pacientesAPI = require("./routes/pacienteRoute");
 //uso de la API para los medicos
 app.use("/medicos", medicosAPI);
+app.use("/pacientes", pacientesAPI);
 
 // para base de datos local
 const server = app.listen(8000, () => console.log("conectado"));
 
-// para cuando ya este la base en mongo cloud
+// para cuando se suba el proyecto a heroku
 // app.set("PORT", process.env.PORT || 3000);
 // app.listen(app.get("PORT"), () => {
 //   console.log(`Servidor en: ${app.get("PORT")}`);

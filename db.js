@@ -1,4 +1,4 @@
 module.exports = {
-    url: ""
+    url: ""   
     //url de la base de datos
 }

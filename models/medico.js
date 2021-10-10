@@ -1,6 +1,7 @@
 let mongoose = require("mongoose");
+let schema = mongoose.Schema;
 
-let medicoScheme = new mongoose.Scheme(
+let medicoSchema = new schema(
   {
     username:{
       type: String,
@@ -14,10 +15,16 @@ let medicoScheme = new mongoose.Scheme(
     correo: {
       type: String,
     },
+    telefono:{
+      type: Number
+    },
+    tipoSangre:{
+      type: String,
+    },
     direccionConsultorio: {
       type: String,
     },
-    especialida: {
+    especialidad: {
       type: String,
     },
   },
@@ -26,4 +33,4 @@ let medicoScheme = new mongoose.Scheme(
   }
 );
 
-module.exports = mongoose.model("medico", medicoScheme);
+module.exports = mongoose.model("medico", medicoSchema);

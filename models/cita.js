@@ -1,6 +1,7 @@
 let mongoose = require('mongoose');
+let schema = mongoose.Schema;
 
-let citaScheme = new mongoose.Scheme(
+let citaSchema = new schema(
     {
         area: {
             type: String,
@@ -20,4 +21,4 @@ let citaScheme = new mongoose.Scheme(
     }
 );
 
-module.exports = mongoose.model("cita", citaScheme);
+module.exports = mongoose.model("cita", citaSchema);

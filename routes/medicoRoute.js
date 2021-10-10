@@ -7,7 +7,9 @@ medicoRoute.route('/').get((req, res) => {
 })
 
 medicoRoute.route('/crear').post((req, res) =>{
+    // console.log(req.body);
     medicoModel.create(req.body,(err, data) => res.json(data));
+    // res.send("Llego");
 });
 
 medicoRoute.route('/buscarPorId/:id').get((req, res) =>{
@@ -21,8 +23,8 @@ medicoRoute.route('/buscarPorEspecialidad/:especialidad').get((req, res) =>{
     medicoModel.find(query, (err, data) => res.json(data))
 });
 
-// medicoRoute.route('/eliminarPorId/:id').get((req, res) =>{
-//     medicoModel.findByIdAndDelete(req.params.id, (err, data) => res.json(data))
-// });
+medicoRoute.route('/eliminarPorId/:id').get((req, res) =>{
+    medicoModel.findByIdAndDelete(req.params.id, (err, data) => res.json(data))
+});
 
 module.exports = medicoRoute;

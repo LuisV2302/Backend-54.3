@@ -1,6 +1,7 @@
 let mongoose = require("mongoose");
+let schema = mongoose.Schema;
 
-let pacienteScheme = new mongoose.Scheme(
+let pacienteSchema = new schema(
   {
     username: {
       type: String,
@@ -26,4 +27,4 @@ let pacienteScheme = new mongoose.Scheme(
   }
 );
 
-module.exports = mongoose.model("paciente", pacienteScheme);
+module.exports = mongoose.model("paciente", pacienteSchema);
