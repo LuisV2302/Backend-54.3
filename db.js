@@ -1,4 +1,4 @@
 module.exports = {
-    url: "mongodb+srv://grupo54:Grupo54@cluster0.ahmss.mongodb.net/medictorio?retryWrites=true&w=majority"   
-    //url de la base de datos
+    //url base de datos
+    url: "mongodb+srv://grupo3:Misintic543@cluster0.rsktw.mongodb.net/Medictorio?retryWrites=true&w=majority"
 }
