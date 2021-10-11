@@ -6,10 +6,10 @@ let citaSchema = new schema(
         area: {
             type: String,
         },
-        medico: {
+        medicoId: {
             type: String,
         },
-        paciente: {
+        pacienteId: {
             type: String,
         },
         fecha: {

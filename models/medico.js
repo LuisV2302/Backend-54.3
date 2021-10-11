@@ -12,6 +12,9 @@ let medicoSchema = new schema(
     nombre: {
       type: String,
     },
+    ciudad: {
+      type: String,
+    },
     correo: {
       type: String,
     },

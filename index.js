@@ -35,9 +35,11 @@ app.use(cors());
 
 const medicosAPI = require("./routes/medicoRoute");
 const pacientesAPI = require("./routes/pacienteRoute");
+const citasAPI = require("./routes/citaRoute");
 //uso de la API para los medicos
 app.use("/medicos", medicosAPI);
 app.use("/pacientes", pacientesAPI);
+app.use("/citas", citasAPI);
 
 // para base de datos local
 const server = app.listen(8000, () => console.log("conectado"));

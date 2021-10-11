@@ -21,6 +21,12 @@ let pacienteSchema = new schema(
     tipoSangre: {
       type: String,
     },
+    ciudad: {
+      type: String,
+    },
+    direccion: {
+      type: String,
+    }
   },
   {
     collection: "pacientes",
