@@ -12,8 +12,11 @@ let citaSchema = new schema(
         pacienteId: {
             type: String,
         },
-        fecha: {
-            type: Date,
+        fechaInicio: {
+            type: String,
+        },
+        fechaFinalizacion: {
+            type: String,
         }
     },
     {
