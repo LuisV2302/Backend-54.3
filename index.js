@@ -19,6 +19,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
+<<<<<<< Updated upstream
 const agendamientoAPI = require("./routes/agendamiento.route");
 app.use("", agendamientoAPI);
+=======
+const citasAPI = require("./routes/citas.route");
+app.use("", citasAPI);
+const medicoAPI = require("./routes/medico.route");
+app.use("", medicoAPI);
+>>>>>>> Stashed changes
 const server = app.listen(8000,() => console.log("conexión correcta :D"));
