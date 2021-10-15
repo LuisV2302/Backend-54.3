@@ -24,7 +24,7 @@ router.post("/login", function(req, res) {
  });
  } else {
  // check if password matches
- user.comparePassword(req.body.contraseña, function(err, isMatch) {
+ Paciente.comparePassword(req.body.contraseña, function(err, isMatch) {
  if (isMatch && !err) {
  // if user is found and password is right create a token
  var token = jwt.sign(user.toJSON(), settings.secret);
@@ -58,7 +58,7 @@ router.post("/login", function(req, res) {
     });
     } else {
     // check if password matches
-    user.comparePassword(req.body.contraseña, function(err, isMatch) {
+    Medico.comparePassword(req.body.contraseña, function(err, isMatch) {
     if (isMatch && !err) {
     // if user is found and password is right create a token
     var token = jwt.sign(user.toJSON(), settings.secret);
