@@ -91,6 +91,7 @@ router.post("/register", function(req, res) {
         correo: req.body.correo,
         telefono:req.body.telefono,
         tipoSangre:req.body.tipoSangre,
+        precio: req.body.precio,
         direccionConsultorio: req.body.direccionConsultorio,
         especialidad: req.body.especialidad,
         role: req.body.role
