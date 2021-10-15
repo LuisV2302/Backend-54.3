@@ -61,4 +61,9 @@ app.use(function(err, req, res, next) {
   res.status(err.statusCode || 500).json(err);
 });
 
-module.exports = app;
+app.set("PORT", process.env.PORT || 3000);
+app.listen(app.get("PORT"), () => {
+  console.log(`Server started on port: ${app.get("PORT")}`);
+});
+
+// module.exports = app;
